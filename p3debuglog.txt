@@ -1,1 +1,59 @@
+GNU bash, version 4.4.20(1)-release (x86_64-pc-linux-gnu)
+b main
+Breakpoint 1 at 0x55c35720083a: file p3final.c, line 33.
+(gdb) r
+Starting program: /home/runner/Test3Session2-1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p3final.c:33
+33  {
+(gdb) n
+35    input_nr(&n, &r);
+(gdb) s
+input_nr (n=0x7ffca2757b4c, r=0x7ffca2757b50) at p3final.c:7
+7     printf("Enter the value for n: ");
+(gdb) n
+8     scanf("%d", n);
+(gdb) n
+Enter the value for n: 10
+9     printf("Enter the value for r: ");
+(gdb) n
+10    scanf("%d", r);
+(gdb) n
+Enter the value for r: 8
+11    return 0;
+(gdb) n
+12  }
+(gdb) p n
+$1 = (int *) 0x7ffca2757b4c
+(gdb) p r
+$2 = (int *) 0x7ffca2757b50
+(gdb) n
+main () at p3final.c:37
+37    int ncr = findncr(n ,r);
+(gdb) s
+findncr (n=10, r=8) at p3final.c:24
+24    return fact(n) / (fact(n-r) * fact(r));
+(gdb) n
+25  }
+(gdb) n
+main () at p3final.c:38
+38    output(n, r, ncr);
+(gdb) s
+output (n=10, r=8, res=45) at p3final.c:29
+29    printf("Given %dC%d = %d", n, r, res);
+(gdb) n
+30  }
+(gdb) p n
+$3 = 10
+(gdb) p r
+$4 = 8
+(gdb) p res
+$5 = 45
+(gdb) n
+main () at p3final.c:40
+40    return 0;
+(gdb) c
+Continuing.
+Given 10C8 = 45[Inferior 1 (process 334) exited normally]
+(gdb) 
